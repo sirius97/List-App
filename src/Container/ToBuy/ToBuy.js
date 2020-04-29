@@ -3,6 +3,7 @@ import Item from './Item/Item';
 import Aux from '../../Hoc/Auxi';
 import Modal from '../../Component/Modal/Modal';
 import BoughtSummary from '../../Component/BoughtSummary/BoughtSummary';
+import classes from './ToBuy.css';
 
 
 
@@ -27,25 +28,13 @@ class ToBuy extends Component {
             this.setState({
                 items: updatedState
             })
-            //console.log(this.state.items)
 
     }
 
-   /* addItemQuantityHandler = (event,id) => {
-        let updatedState = [...this.state.items]
-        let indexEle = updatedState.findIndex(el => (el.id === id))         
-        updatedState[indexEle].quantity = event.target.value
-        this.setState({
-            items: updatedState
-        })
-     //   console.log("state",this.state.items)
 
-
-    }  inside Item comp => changeQuantity = {(event,id) => this.addItemQuantityHandler(event,el.id)}*/
 
     onClickHandler = () => {
         let newElement = [...this.state.items]
-        //console.log(newElement)
         let id = this.state.count + 1
         let element = { id: id , name: "", quantity: 0}
         newElement.push(element)
@@ -63,8 +52,7 @@ class ToBuy extends Component {
             this.setState({
                 items: updatedState
             })
-            //console.log(this.state.items)
-    
+  
         }
 
          boughtUpdate = []
@@ -72,7 +60,6 @@ class ToBuy extends Component {
         doneBuyingHandler = (index,id) => {
             console.log("Inside done")
             let updatedState = [...this.state.items]
-            //console.log(this.state.items)
             let indexi = updatedState.findIndex(el => (el.id === id))
             let boughtItem = updatedState.splice(indexi,1)
             console.log(index,indexi)
@@ -82,7 +69,6 @@ class ToBuy extends Component {
                bought: this.boughtUpdate,
                 items: updatedState,
               })
-              //console.log("items:", this.state.items)
               console.log("bought:", this.state.bought)
         }
 
@@ -143,7 +129,7 @@ class ToBuy extends Component {
 
         return(
         <Aux>
-            <div>
+            <div className = {classes.ToBuy}>
                 <button 
                 style = {{borderRadius:'20%',padding:'10px',fontFamily:'Lobster',fontSize:'19px',margin:'10px'}}
                 onClick = {this.onClickHandler}>To Buy</button>
@@ -152,9 +138,12 @@ class ToBuy extends Component {
             <Modal show = {this.state.show} backclicked = {this.backclickedHandler}>
                 {boughtSummary}
             </Modal>
+            <div className={classes.Bought}>
             <button 
-            style = {{borderRadius:'20%',padding:'10px',fontFamily:'Lobster',fontSize:'19px'}}
-            onClick={this.seeBoughtHandler}>See Bought</button>
+                style = {{borderRadius:'20%',padding:'10px',fontFamily:'Lobster',fontSize:'19px'}}
+                onClick={this.seeBoughtHandler}>See Bought</button> 
+            </div>
+           
         </Aux>
         );
     }

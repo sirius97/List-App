@@ -1,0 +1,18 @@
+.ToBuy{
+    text-align: center;
+}
+
+.ToBuy button:hover{
+
+    background-color: coral;
+    color: cornsilk;
+}
+
+.Bought {
+    text-align: center;
+}
+
+.Bought button:hover{
+    background-color: hotpink;
+    color: black;
+}
