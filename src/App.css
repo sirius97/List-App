@@ -11,3 +11,9 @@
   font-weight: 300;
 
 }
+
+@media (min-width: 400px){
+  .App h1{
+    width: 100%;
+  }
+}
