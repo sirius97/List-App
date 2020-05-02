@@ -44,7 +44,7 @@
 
 @media only screen and (max-width: 500px){
     .Item {
-        width : fit-content;
+        width : 100%;
         height : fit-content;
         padding: 15px;
         display: flex;
