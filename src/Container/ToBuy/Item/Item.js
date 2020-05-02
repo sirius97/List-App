@@ -6,17 +6,14 @@ const item = (props) => {
 
       return  (
             <div className={classes.Item}>
-                <div style = {{display:'flex', marginLeft:'250px'}}>
-                    <div style ={{marginRight:'10px'}}>
-                    <input type="text" style = {{height:'78%',fontFamily:'Lobster',fontSize:'24px',textAlign:'center'}}onChange = {props.changeName} placeholder="Enter here" value={props.name}/>
+                <div className ={classes.A}>
+                    <div>
+                    <input type="text" onChange = {props.changeName} placeholder="Enter here" value={props.name}/>
                     </div>
                     <QuantityCounter quantity = {props.quantity} increment = {props.increment} decrement = {props.decremet} />
                 </div>
-                <div style={{display:'flex',marginLeft:'350px'}}>
-                <button onClick={props.delete} style={{backgroundColor:"red",marginRight: '10px',padding:'8px', fontFamily : 'Lobster'}}>Delete</button>
-                <button onClick = {props.done} style={{backgroundColor:"green",padding:'8px',fontFamily : 'Lobster'}}>Done</button>
-                </div>
-                
+                <button onClick={props.delete} className = {classes.Delete}>Delete</button>
+                <button onClick = {props.done} className={classes.Done}>Done</button> 
             </div>
         );
 

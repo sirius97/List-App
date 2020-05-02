@@ -130,8 +130,7 @@ class ToBuy extends Component {
         return(
         <Aux>
             <div className = {classes.ToBuy}>
-                <button 
-                style = {{borderRadius:'20%',padding:'10px',fontFamily:'Lobster',fontSize:'19px',margin:'10px'}}
+                <button className = {classes.buttonA}
                 onClick = {this.onClickHandler}>To Buy</button>
                 {items}
             </div>

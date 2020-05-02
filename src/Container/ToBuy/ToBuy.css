@@ -2,6 +2,15 @@
     text-align: center;
 }
 
+.buttonA{
+
+    border-radius:20%;
+    padding:10px;
+    font-family:Lobster;
+    font-size:19px;
+    margin:10px;
+}
+
 .ToBuy button:hover{
 
     background-color: coral;
